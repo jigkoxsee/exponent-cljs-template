@@ -10,30 +10,33 @@
   (get
    {:om [["project.clj" (render "om/project.clj" data)]
          ["build.boot" (render "om/build.boot" data)]
+         ["deps.edn" (render "om/deps.edn" data)]
          ["src/{{sanitized}}/core.cljs" (render "om/core.cljs" data)]
          ["src/{{sanitized}}/state.cljs" (render "om/state.cljs" data)]
-         ["env/dev/env/main.cljs" (render "om/main_dev.cljs" data)]
+         ["env/dev/env/expo/main.cljs" (render "om/main_dev.cljs" data)]
          ["src/re_natal/support.cljs" (render "om/support.cljs" data)]]
     :reagent [["project.clj" (render "reagent/project.clj" data)]
               ["build.boot" (render "reagent/build.boot" data)]
+              ["deps.edn" (render "reagent/deps.edn" data)]
               ["src/{{sanitized}}/core.cljs" (render "reagent/core.cljs" data)]
               ["src/{{sanitized}}/db.cljs" (render "reagent/db.cljs" data)]
               ["src/{{sanitized}}/handlers.cljs" (render "reagent/handlers.cljs" data)]
               ["src/{{sanitized}}/subs.cljs" (render "reagent/subs.cljs" data)]
-              ["env/dev/env/main.cljs" (render "reagent/main_dev.cljs" data)]
+              ["env/dev/env/expo/main.cljs" (render "reagent/main_dev.cljs" data)]
               ["src/reagent/dom.cljs" (render "src/reagent/dom.cljs" data)]
               ["src/reagent/dom/server.cljs" (render "src/reagent/dom/server.cljs" data)]]
     :rum [["project.clj" (render "rum/project.clj" data)]
           ["build.boot" (render "rum/build.boot" data)]
+          ["deps.edn" (render "rum/deps.edn" data)]
           ["src/{{sanitized}}/core.cljs" (render "rum/core.cljs" data)]
-          ["env/dev/env/main.cljs" (render "rum/main_dev.cljs" data)]
+          ["env/dev/env/expo/main.cljs" (render "rum/main_dev.cljs" data)]
           ["src/re_natal/support.cljs" (render "rum/support.cljs" data)]]}
    lib))
 
 (defn expo [name & lib]
   (main/info "Generating fresh Expo project.")
   (main/info "README.md contains instructions to get you started.")
-  (main/info "If you have any questions, you can ask us on Expo slack #clojurescript channel. https://slack.expo.io/")
+  (main/info "If you have any questions, you can ask us on Clojurians #cljsrn channel. http://clojurians.net")
 
   (let [data {:name name
               :sanitized (name-to-path name)}
@@ -58,7 +61,8 @@
       ["readme.md" (render "readme.md" data)]
       ["env/dev/user.clj" (render "env/dev/user.clj" data)]
       ["env/dev/externs.clj" (render "env/dev/externs.clj" data)]
-      ["env/prod/env/main.cljs" (render "env/prod/env/main.cljs" data)]
+      ["env/prod/env/expo/main.cljs" (render "env/prod/env/expo/main.cljs" data)]
+      ["env/prod/user.clj" (render "env/prod/user.clj" data)]
       ["src/cljsjs/create_react_class.cljs" (render "src/cljsjs/create_react_class.cljs" data)]
       ["src/cljsjs/react.cljs" (render "src/cljsjs/react.cljs" data)]
       ["src/cljsjs/react/dom.cljs" (render "src/cljsjs/react/dom.cljs" data)]

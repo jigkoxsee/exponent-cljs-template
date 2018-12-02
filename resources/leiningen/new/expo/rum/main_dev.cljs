@@ -1,4 +1,4 @@
-(ns ^:figwheel-no-load env.main
+(ns ^:figwheel-no-load env.expo.main
   (:require [{{name}}.core :as core]
             [figwheel.client :as figwheel :include-macros true]
             [env.dev]))

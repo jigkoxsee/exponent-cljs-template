@@ -1,12 +1,16 @@
 (ns {{name}}.core
     (:require [reagent.core :as r :refer [atom]]
               [re-frame.core :refer [subscribe dispatch dispatch-sync]]
+              [oops.core :refer [ocall]]
               [{{name}}.handlers]
               [{{name}}.subs]))
 
 (def ReactNative (js/require "react-native"))
+(def expo (js/require "expo"))
+(def AtExpo (js/require "@expo/vector-icons"))
+(def ionicons (.-Ionicons AtExpo))
+(def ic (r/adapt-react-class ionicons))
 
-(def app-registry (.-AppRegistry ReactNative))
 (def text (r/adapt-react-class (.-Text ReactNative)))
 (def view (r/adapt-react-class (.-View ReactNative)))
 (def image (r/adapt-react-class (.-Image ReactNative)))
@@ -24,10 +28,11 @@
                :style {:width 200
                        :height 200}}]
        [text {:style {:font-size 30 :font-weight "100" :margin-bottom 20 :text-align "center"}} @greeting]
+       [ic {:name "ios-arrow-down" :size 60 :color "green"}]
        [touchable-highlight {:style {:background-color "#999" :padding 10 :border-radius 5}
                              :on-press #(alert "HELLO!")}
         [text {:style {:color "white" :text-align "center" :font-weight "bold"}} "press me"]]])))
 
 (defn init []
   (dispatch-sync [:initialize-db])
-  (.registerComponent app-registry "main" #(r/reactify-component app-root)))
+  (ocall expo "registerRootComponent" (r/reactify-component app-root)))
