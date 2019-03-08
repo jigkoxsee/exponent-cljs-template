@@ -6,7 +6,7 @@ Create [React Native](https://facebook.github.io/react-native/) apps in [Clojure
 
 ## Status
 ```diff
-+ [expo "30.0.0"]
++ [expo "32.0.0"]
 + [org.omcljs/om "1.0.0-beta1"]
 + [reagent "0.7.0"]
 + [re-frame "0.10.6"]
@@ -30,7 +30,7 @@ Pull requests welcome!  I don't know enough about `Boot` (or have enough time to
 * [Hire me](http://tempesta.io).  I'm available for contract work and am happy to help you and your team quickly get up to speed creating your Clojurescript React Native app. :)
 
 ## Dependencies (install these first)
-* [Expo tools](https://docs.expo.io/versions/v30.0.0/introduction/installation)
+* [Expo tools](https://docs.expo.io/versions/v32.0.0/introduction/installation)
 * [Lein](http://leiningen.org/#install)
 * [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 
