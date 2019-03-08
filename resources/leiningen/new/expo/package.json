@@ -6,9 +6,11 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
-    "expo": "^30.0.1",
+    "create-react-class": "15.6.3",
+    "expo": "^32.0.0",
+    "metro": "^0.53.0",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "create-react-class": "15.6.3"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-navigation": "^3.0.9"
   }
 }
